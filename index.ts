@@ -25,7 +25,7 @@ export class Instance {
 
   // source: http://stackoverflow.com/a/2686098/1074592
   public simplify (num = 0) {
-    let number = num
+    let numberVar = num
 
     // 2 decimal places => 100, 3 => 1000, etc
     let decPlaces = this.config.decimal
@@ -41,26 +41,26 @@ export class Instance {
       const size = Math.pow(10, (i + 1) * 3)
 
       // If the number is bigger or equal do the abbreviation
-      if (size <= number) {
+      if (size <= numberVar) {
         // Here, we multiply by decPlaces, round, and then divide by decPlaces.
         // This gives us nice rounding to a particular decimal place.
-        number = Math.round((number * decPlaces) / size) / decPlaces
+        numberVar = Math.round((numberVar * decPlaces) / size) / decPlaces
 
         // Handle special case where we round up to the next abbreviation
-        if (number == 1000 && i < abbrev.length - 1) {
-          number = 1
+        if (numberVar === 1000 && i < abbrev.length - 1) {
+          numberVar = 1
           i++
         }
 
         // Add the letter for the abbreviation
-        (number as any) += abbrev[i]
+        (numberVar as any) += abbrev[i]
 
         // We are done... stop
         break
       }
     }
 
-    return String(number)
+    return String(numberVar)
   }
 }
 

@@ -1,21 +1,31 @@
-import test from 'ava'
+import test, { Macro } from 'ava'
 import SimplifyNumber from './index'
 
-test('Thousand to K', (t) => {
-  const num1k = SimplifyNumber(1000)
-  t.is(num1k, '1k')
+const convertMacro: Macro = (t, input, expected) => {
+  t.is(SimplifyNumber(input), expected)
+}
+convertMacro.title = (providedTitle, input, expected) => {
+  return `${providedTitle} ${input} = ${expected}`.trim()
+}
 
-  const num10k = SimplifyNumber(10000)
-  t.is(num10k, '10k')
-
-  const num11k = SimplifyNumber(11000)
-  t.is(num11k, '11k')
-})
-
-test('Million to m', (t) => {
-  const num1k = SimplifyNumber(1000000)
-  t.is(num1k, '1m')
-})
+// Thousand
+test('Convert to thousand number:', convertMacro, 1000, '1k')
+test('Convert to thousand number:', convertMacro, 10000, '10k')
+test('Convert to thousand number:', convertMacro, 11000, '11k')
+test('Convert to thousand number:', convertMacro, 100000, '100k')
+// Million
+test('Convert to million number:', convertMacro, 1000000, '1m')
+test('Convert to million number:', convertMacro, 10000000, '10m')
+test('Convert to million number:', convertMacro, 100000000, '100m')
+// Billion
+test('Convert to billion number:', convertMacro, 1000000000, '1b')
+test('Convert to billion number:', convertMacro, 10000000000, '10b')
+test('Convert to billion number:', convertMacro, 100000000000, '100b')
+// Trilliun
+test('Convert to trilliun number:', convertMacro, 1000000000000, '1t')
+test('Convert to trilliun number:', convertMacro, 10000000000000, '10t')
+test('Convert to trilliun number:', convertMacro, 100000000000000, '100t')
+test('Convert to trilliun number:', convertMacro, 1000000000000000, '1000t')
 
 test('Custom config abbrev', (t) => {
   const num1rb = SimplifyNumber(1000, {
