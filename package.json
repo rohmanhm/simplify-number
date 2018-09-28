@@ -4,6 +4,7 @@
   "description": "Simplify Number",
   "main": "./dist/index.js",
   "repository": "https://github.com/rohmanhm/simplify-number.git",
+  "typings": "./index.d.ts",
   "author": "MH Rohman",
   "license": "MIT",
   "private": false,
