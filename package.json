@@ -1,6 +1,6 @@
 {
   "name": "simplify-number",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simplify Number",
   "main": "./dist/index.js",
   "repository": "https://github.com/rohmanhm/simplify-number.git",
