@@ -1,7 +1,7 @@
 # Simplify Number
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/rohmanhm/simplify-number.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.com/rohmanhm/simplify-number.svg?branch=master)](https://travis-ci.org/rohmanhm/simplify-number)
+[![Build Status](https://travis-ci.com/rohmanhm/simplify-number.svg?branch=master)](https://travis-ci.com/rohmanhm/simplify-number)
 
 > Simplify number
 
